@@ -1,0 +1,25 @@
+{
+  "convention": "haircut",
+  "anchor_taint_sats": 1000000000000,
+  "anchor_taint_btc": 10000.0,
+  "n_nodes": 10,
+  "n_unique_addresses": 9,
+  "n_unique_txs_in_tree": 7,
+  "max_depth_reached": 5,
+  "by_terminal_sats": {
+    "depth-pruned": 999999999998,
+    "fee-absorbed": 2
+  },
+  "by_terminal_btc": {
+    "depth-pruned": 9999.99999998,
+    "fee-absorbed": 2e-08
+  },
+  "fee_taint_sats": 2,
+  "fee_taint_btc": 2e-08,
+  "taint_conservation_check_btc": 10000.0,
+  "warnings": [],
+  "explorer_stats": {
+    "hits": 25,
+    "misses": 0
+  }
+}

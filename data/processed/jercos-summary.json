@@ -1,0 +1,63 @@
+{
+  "address": "17SkEw2md5avVNyYgj6RiXuQKNwkXaxFyQ",
+  "address_funded_txo_count": 14,
+  "address_spent_txo_count": 1,
+  "address_funded_sats": 1000000258450,
+  "address_funded_btc": 10000.0025845,
+  "n_deposits_total": 14,
+  "n_deposits_unspent": 13,
+  "n_deposits_spent": 1,
+  "total_unspent_dust_sats": 258450,
+  "total_unspent_dust_btc": 0.0025845,
+  "by_year": {
+    "2015": {
+      "n_deposits": 1,
+      "total_value_sats": 10000,
+      "total_value_btc": 0.0001,
+      "smallest_sats": 10000,
+      "largest_sats": 10000
+    },
+    "2017": {
+      "n_deposits": 1,
+      "total_value_sats": 100000,
+      "total_value_btc": 0.001,
+      "smallest_sats": 100000,
+      "largest_sats": 100000
+    },
+    "2018": {
+      "n_deposits": 1,
+      "total_value_sats": 1111,
+      "total_value_btc": 1.111e-05,
+      "smallest_sats": 1111,
+      "largest_sats": 1111
+    },
+    "2020": {
+      "n_deposits": 1,
+      "total_value_sats": 141482,
+      "total_value_btc": 0.00141482,
+      "smallest_sats": 141482,
+      "largest_sats": 141482
+    },
+    "2023": {
+      "n_deposits": 2,
+      "total_value_sats": 1546,
+      "total_value_btc": 1.546e-05,
+      "smallest_sats": 546,
+      "largest_sats": 1000
+    },
+    "2024": {
+      "n_deposits": 6,
+      "total_value_sats": 3740,
+      "total_value_btc": 3.74e-05,
+      "smallest_sats": 546,
+      "largest_sats": 1010
+    },
+    "2026": {
+      "n_deposits": 1,
+      "total_value_sats": 571,
+      "total_value_btc": 5.71e-06,
+      "smallest_sats": 571,
+      "largest_sats": 571
+    }
+  }
+}

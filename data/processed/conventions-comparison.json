@@ -1,0 +1,58 @@
+{
+  "rows": [
+    {
+      "convention": "fifo",
+      "n_nodes": 10,
+      "n_unique_txs": 7,
+      "max_depth": 5,
+      "horizon_tainted_btc": 10000.0,
+      "fee_or_residual_btc": 0.0,
+      "terminal_attributed_taint_btc": 10000.0,
+      "conserves_anchor_taint": true,
+      "largest_horizon_node": {
+        "address": "1KcAt5s7fpPPVHzVpT15weSeSFEwTm83dC",
+        "tainted_btc": 4500.0,
+        "utxo_value_btc": 5677.0
+      },
+      "interpretation_risk": "Conservative: only the strict positional prefix of each input flows to the next-positioned output. Per-output taint can be zero even if the tx has tainted inputs."
+    },
+    {
+      "convention": "haircut",
+      "n_nodes": 10,
+      "n_unique_txs": 7,
+      "max_depth": 5,
+      "horizon_tainted_btc": 9999.99999998,
+      "fee_or_residual_btc": 2e-08,
+      "terminal_attributed_taint_btc": 10000.0,
+      "conserves_anchor_taint": true,
+      "largest_horizon_node": {
+        "address": "1KcAt5s7fpPPVHzVpT15weSeSFEwTm83dC",
+        "tainted_btc": 5009.98003992,
+        "utxo_value_btc": 5677.0
+      },
+      "interpretation_risk": "Proportional: every output receives a fraction of the input taint pool equal to its share of total output value. Rounding pennies go to the fee."
+    },
+    {
+      "convention": "poison",
+      "n_nodes": 10,
+      "n_unique_txs": 7,
+      "max_depth": 5,
+      "horizon_tainted_btc": 11177.0,
+      "fee_or_residual_btc": 0.0,
+      "terminal_attributed_taint_btc": 11177.0,
+      "conserves_anchor_taint": false,
+      "largest_horizon_node": {
+        "address": "1KcAt5s7fpPPVHzVpT15weSeSFEwTm83dC",
+        "tainted_btc": 5677.0,
+        "utxo_value_btc": 5677.0
+      },
+      "interpretation_risk": "Maximalist: any tainted input marks every output as fully tainted. Inflation grows as un-tainted inputs join descendant txs."
+    }
+  ],
+  "delta_vs_fifo_btc": {
+    "haircut": -1.9999788491986692e-08,
+    "poison": 1177.0
+  },
+  "topology_diverges_at_horizon": false,
+  "note": "Topology (set of UTXOs visited) is identical across the three conventions for this dataset because the dust-pruning threshold (1 BTC) is below the smallest tainted amount under every convention. At a higher dust threshold, poison would visit additional descendants because of its inflation."
+}

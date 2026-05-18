@@ -1,0 +1,298 @@
+{
+  "chain_tip_at_trace_time": 949941,
+  "provenance": {
+    "repo_commit_sha": "ef16f6b14c1a21ea5cf589c4b9104eff9c89d7bb",
+    "python_version": "3.12.3"
+  },
+  "conventions_comparison": {
+    "rows": [
+      {
+        "convention": "fifo",
+        "n_nodes": 10,
+        "n_unique_txs": 7,
+        "max_depth": 5,
+        "horizon_tainted_btc": 10000.0,
+        "fee_or_residual_btc": 0.0,
+        "terminal_attributed_taint_btc": 10000.0,
+        "conserves_anchor_taint": true,
+        "largest_horizon_node": {
+          "address": "1KcAt5s7fpPPVHzVpT15weSeSFEwTm83dC",
+          "tainted_btc": 4500.0,
+          "utxo_value_btc": 5677.0
+        },
+        "interpretation_risk": "Conservative: only the strict positional prefix of each input flows to the next-positioned output. Per-output taint can be zero even if the tx has tainted inputs."
+      },
+      {
+        "convention": "haircut",
+        "n_nodes": 10,
+        "n_unique_txs": 7,
+        "max_depth": 5,
+        "horizon_tainted_btc": 9999.99999998,
+        "fee_or_residual_btc": 2e-08,
+        "terminal_attributed_taint_btc": 10000.0,
+        "conserves_anchor_taint": true,
+        "largest_horizon_node": {
+          "address": "1KcAt5s7fpPPVHzVpT15weSeSFEwTm83dC",
+          "tainted_btc": 5009.98003992,
+          "utxo_value_btc": 5677.0
+        },
+        "interpretation_risk": "Proportional: every output receives a fraction of the input taint pool equal to its share of total output value. Rounding pennies go to the fee."
+      },
+      {
+        "convention": "poison",
+        "n_nodes": 10,
+        "n_unique_txs": 7,
+        "max_depth": 5,
+        "horizon_tainted_btc": 11177.0,
+        "fee_or_residual_btc": 0.0,
+        "terminal_attributed_taint_btc": 11177.0,
+        "conserves_anchor_taint": false,
+        "largest_horizon_node": {
+          "address": "1KcAt5s7fpPPVHzVpT15weSeSFEwTm83dC",
+          "tainted_btc": 5677.0,
+          "utxo_value_btc": 5677.0
+        },
+        "interpretation_risk": "Maximalist: any tainted input marks every output as fully tainted. Inflation grows as un-tainted inputs join descendant txs."
+      }
+    ],
+    "delta_vs_fifo_btc": {
+      "haircut": -1.9999788491986692e-08,
+      "poison": 1177.0
+    },
+    "topology_diverges_at_horizon": false,
+    "note": "Topology (set of UTXOs visited) is identical across the three conventions for this dataset because the dust-pruning threshold (1 BTC) is below the smallest tainted amount under every convention. At a higher dust threshold, poison would visit additional descendants because of its inflation."
+  },
+  "anchor": {
+    "txid": "a1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d",
+    "block_height": 57043,
+    "block_time_utc_iso": "2010-05-22T18:16:31Z",
+    "block_time_unix": 1274552191,
+    "fee_sats": 99000000,
+    "fee_btc": 0.99,
+    "n_inputs": 131,
+    "n_inputs_0_01_btc_crumbs": 111,
+    "largest_input_btc": 3753.88,
+    "largest_input_age_days_at_spend": 5.2,
+    "oldest_input_age_days_at_spend": 37.25,
+    "mean_input_age_days": 30.72,
+    "recipient": "17SkEw2md5avVNyYgj6RiXuQKNwkXaxFyQ"
+  },
+  "trace": {
+    "convention": "strict positional FIFO with 1 BTC dust pruning and 100-input cluster termination",
+    "max_depth_traced": 5,
+    "n_nodes": 10,
+    "n_unique_addresses": 9,
+    "n_unique_txs": 7,
+    "terminal_attributed_taint_btc": 10000.0,
+    "conserves_anchor_taint": true,
+    "by_terminal_btc": {
+      "depth-pruned": 10000.0
+    },
+    "depth_pruning_horizon": true
+  },
+  "consolidation": {
+    "consolidation_event_node": {
+      "depth": 3,
+      "tx": "9e744590d196b63d02a1dd7ef596fd6082286f84295d66da411a9ffebfdd1957",
+      "address": "1PrwYMffhu1XJyVXs6Ba67NidGZVjbGHCq",
+      "consolidated_amount_btc": 11022.0,
+      "tainted_portion_btc": 10000.0,
+      "non_pizza_portion_btc": 1022.0,
+      "block_height": 64683,
+      "block_time": 1278471384,
+      "block_time_iso": "2010-07-07T02:56:24+00:00",
+      "days_after_anchor": 45.36
+    },
+    "consolidation_address_history": {
+      "address": "1PrwYMffhu1XJyVXs6Ba67NidGZVjbGHCq",
+      "lifetime_tx_count": 4,
+      "funded_txo_count": 2,
+      "spent_txo_count": 2,
+      "total_received_btc": 11272.0,
+      "total_spent_btc": 11272.0,
+      "current_balance_btc": 0.0,
+      "history": [
+        {
+          "txid": "56e24fe6b5886078f822bddc4261abcbd653e2f169d69b6c083dd01b7225275f",
+          "block_height": 57053,
+          "block_position": 2,
+          "date_utc": "2010-05-22T19:13:32+00:00",
+          "role": "receive",
+          "amount_btc": 250.0,
+          "n_inputs": 2,
+          "n_outputs": 2,
+          "fee_btc": 0.0,
+          "counterparties": [
+            "18ZChqRsb7eKgH8wLg9Pfkkezux34pf6eo"
+          ]
+        },
+        {
+          "txid": "e380c6c0b1ceae9d396d479bb9a16ccdfd72bd6902fa481ea23a4baf05db4c7d",
+          "block_height": 57055,
+          "block_position": 2,
+          "date_utc": "2010-05-22T19:28:35+00:00",
+          "role": "spend",
+          "amount_btc": 250.0,
+          "n_inputs": 1,
+          "n_outputs": 1,
+          "fee_btc": 0.0,
+          "counterparties": [
+            "18ZChqRsb7eKgH8wLg9Pfkkezux34pf6eo"
+          ]
+        },
+        {
+          "txid": "9e744590d196b63d02a1dd7ef596fd6082286f84295d66da411a9ffebfdd1957",
+          "block_height": 64683,
+          "block_position": 1,
+          "date_utc": "2010-07-07T02:56:24+00:00",
+          "role": "receive",
+          "amount_btc": 11022.0,
+          "n_inputs": 20,
+          "n_outputs": 1,
+          "fee_btc": 0.0,
+          "counterparties": [
+            "18ZChqRsb7eKgH8wLg9Pfkkezux34pf6eo",
+            "19teQR8MwE1d9QqqDYHejE5cXFXoZNFsDD"
+          ]
+        },
+        {
+          "txid": "1d001840a1eccd2d3f0505a6b54d60812cf9295a08a1afc48871cf21ad1147f8",
+          "block_height": 64683,
+          "block_position": 2,
+          "date_utc": "2010-07-07T02:56:24+00:00",
+          "role": "spend",
+          "amount_btc": 11022.0,
+          "n_inputs": 1,
+          "n_outputs": 2,
+          "fee_btc": 0.0,
+          "counterparties": [
+            "1B7cetLTSKP4druMdqSiPjf2ZmCeuaGcb4",
+            "1NX8uqs2p4CzosgouwtMP1w2aLqYJwgJUg"
+          ]
+        }
+      ]
+    }
+  },
+  "depth_horizon_frontier": [
+    {
+      "node_id": 7,
+      "txid": "7f02e1a82810bf57c151ccb5c8b9231151dd68cae53c190a66b7dfb69e5b90b2",
+      "vout": 0,
+      "address": "1KcAt5s7fpPPVHzVpT15weSeSFEwTm83dC",
+      "amount_btc": 5677.0,
+      "taint_btc": 4500.0,
+      "frontier_status": "spent-beyond-horizon",
+      "spent_in_tx": "7efef7775b7675edac2373d7c27c36fedeb901510984484bc49d3fac15dba8db",
+      "spent_at_block": 65671
+    },
+    {
+      "node_id": 8,
+      "txid": "6ac97d586d1bbcc71d5d735bacd4535a7bbfb5cb074eb7b562d7a49c258a61fa",
+      "vout": 0,
+      "address": "12ofyFo3ExgseLRwDW8ZgVpoaemNHyU2Wd",
+      "amount_btc": 3500.0,
+      "taint_btc": 3500.0,
+      "frontier_status": "spent-beyond-horizon",
+      "spent_in_tx": "967e8c36a633d2451525f4a833c2fa7574f8f56932bc3d6e939c5a624cebf60d",
+      "spent_at_block": 67967
+    },
+    {
+      "node_id": 9,
+      "txid": "6ac97d586d1bbcc71d5d735bacd4535a7bbfb5cb074eb7b562d7a49c258a61fa",
+      "vout": 1,
+      "address": "17G2pjfKvznmMrgJA1yJoEvYQDsMFkHhND",
+      "amount_btc": 2000.0,
+      "taint_btc": 2000.0,
+      "frontier_status": "spent-beyond-horizon",
+      "spent_in_tx": "33bd877c74a08ce1da95050920037ec3663917744029b51ca457e760597cab18",
+      "spent_at_block": 66771
+    }
+  ],
+  "jercos_address": {
+    "address": "17SkEw2md5avVNyYgj6RiXuQKNwkXaxFyQ",
+    "funded_txo_count": 14,
+    "spent_txo_count": 1,
+    "total_funded_btc": 10000.0025845,
+    "n_apparent_deposits_unspent": 13,
+    "total_unspent_dust_btc": 0.0025845,
+    "anniversary_deposits_may22": [
+      {
+        "date": "2023-05-22",
+        "value_sats": 546
+      },
+      {
+        "date": "2024-05-22",
+        "value_sats": 546
+      }
+    ],
+    "deposits_at_546_sats": 6,
+    "deposits_by_year": {
+      "2015": {
+        "n_deposits": 1,
+        "total_value_sats": 10000,
+        "total_value_btc": 0.0001,
+        "smallest_sats": 10000,
+        "largest_sats": 10000
+      },
+      "2017": {
+        "n_deposits": 1,
+        "total_value_sats": 100000,
+        "total_value_btc": 0.001,
+        "smallest_sats": 100000,
+        "largest_sats": 100000
+      },
+      "2018": {
+        "n_deposits": 1,
+        "total_value_sats": 1111,
+        "total_value_btc": 1.111e-05,
+        "smallest_sats": 1111,
+        "largest_sats": 1111
+      },
+      "2020": {
+        "n_deposits": 1,
+        "total_value_sats": 141482,
+        "total_value_btc": 0.00141482,
+        "smallest_sats": 141482,
+        "largest_sats": 141482
+      },
+      "2023": {
+        "n_deposits": 2,
+        "total_value_sats": 1546,
+        "total_value_btc": 1.546e-05,
+        "smallest_sats": 546,
+        "largest_sats": 1000
+      },
+      "2024": {
+        "n_deposits": 6,
+        "total_value_sats": 3740,
+        "total_value_btc": 3.74e-05,
+        "smallest_sats": 546,
+        "largest_sats": 1010
+      },
+      "2026": {
+        "n_deposits": 1,
+        "total_value_sats": 571,
+        "total_value_btc": 5.71e-06,
+        "smallest_sats": 571,
+        "largest_sats": 571
+      }
+    }
+  },
+  "linked_address_signal": {
+    "address": "18ZChqRsb7eKgH8wLg9Pfkkezux34pf6eo",
+    "appears_as_descendant_node": true,
+    "consolidation_counterparty_appearances": 3,
+    "note": "This address is both the depth-2 successor of the 5,777 BTC pizza half and a counterparty to 3 of the 4 lifetime transactions of the consolidation address. The chain-only evidence is consistent with a single actor controlling both addresses; we do not invoke external clustering heuristics to make that claim."
+  },
+  "headline_findings": [
+    "The famous Pizza Day transaction itself paid 0.99 BTC in fees \u2014 rarely foregrounded in the coverage surveyed in analysis/prior-art.md.",
+    "Of 131 inputs, 111 were 0.01 BTC \"crumbs\" \u2014 typical of consolidated mining residue, not coinbase outputs directly.",
+    "Largest single input was 3753.88 BTC, only 5.2 days old at the moment of spending.",
+    "The two FIFO-tainted branches that fed the 2010-07-07 02:56 UTC consolidation had each been dormant for about 45 days by then. They were then consolidated, in a single transaction, with 18 other UTXOs of non-pizza-tainted provenance under this convention, into one 11,022 BTC output at 1PrwYMffhu1XJyVXs6Ba67NidGZVjbGHCq.",
+    "That consolidation address has only 4 lifetime transactions, all in May\u2013July 2010, and a zero balance today \u2014 a one-off transit point, not an exchange wallet.",
+    "At the depth-5 horizon, all 10,000 BTC of pizza taint sits in 3 frontier UTXOs. The trace stops there by convention; their next-hop status is reported separately in `depth_horizon_frontier`.",
+    "The recipient address 17SkEw2md5avVNyYgj6RiXuQKNwkXaxFyQ has been funded 14 times in its life but spent only once \u2014 the famous 10K-BTC pizza payment. The other 13 deposits are unspent dust; some land on May-22 anniversaries.",
+    "Two of the apparent anniversary deposits (2023-05-22 and 2024-05-22) are exactly 546 satoshis \u2014 the Bitcoin Core relay default dust threshold for P2PKH \u2014 among the smallest deposits a standard wallet will broadcast.",
+    "Address 18ZChqRsb7eKgH8wLg9Pfkkezux34pf6eo appears both as the depth-2 successor of the 5,777 BTC pizza half and as a counterparty in 3 of 4 lifetime transactions of the consolidation address \u2014 chain-only evidence consistent with a single actor controlling both, though we do not invoke external clustering heuristics to confirm."
+  ]
+}

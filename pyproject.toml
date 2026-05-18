@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pizza-day-trace"
+version = "0.1.0"
+description = "Forensic UTXO trace of the famous 10,000 BTC Pizza Day transaction"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Max Nardit", email = "mnardit@gmail.com" },
+]
+dependencies = [
+  "requests>=2.31,<3",
+  "pandas>=2.0,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0,<9",
+]
+
+[project.urls]
+Article = "https://max.nardit.com/articles/tracing-the-pizza-day-bitcoins"
+Repository = "https://github.com/mnardit/pizza-day-trace"
+
+[tool.setuptools]
+packages = ["src"]

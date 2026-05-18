@@ -1,0 +1,23 @@
+{
+  "n_inputs": 131,
+  "n_inputs_coinbase_direct": 0,
+  "n_inputs_0_01_btc_crumbs": 111,
+  "n_inputs_exactly_50_btc": 0,
+  "total_value_btc": 10000.99,
+  "buckets": {
+    "100-200 BTC": 8,
+    "200-500 BTC": 7,
+    "50-100 BTC": 1,
+    "0.01 BTC": 111,
+    ">=1000 BTC": 1,
+    "500-1000 BTC": 3
+  },
+  "anchor_height": 57043,
+  "anchor_time": 1274552191,
+  "largest_input_btc": 3753.88,
+  "largest_input_age_days": 5.2,
+  "oldest_input_age_days": 37.25,
+  "oldest_input_btc": 150.0,
+  "median_age_days": 33.98,
+  "mean_age_days": 30.72
+}
