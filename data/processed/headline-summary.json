@@ -1,7 +1,7 @@
 {
   "chain_tip_at_trace_time": 949941,
   "provenance": {
-    "repo_commit_sha": "ef16f6b14c1a21ea5cf589c4b9104eff9c89d7bb",
+    "repo_commit_sha": "d45a1edb4066bdf35d918eb0046fb383f2246cc5",
     "python_version": "3.12.3"
   },
   "conventions_comparison": {
@@ -36,7 +36,7 @@
           "tainted_btc": 5009.98003992,
           "utxo_value_btc": 5677.0
         },
-        "interpretation_risk": "Proportional: every output receives a fraction of the input taint pool equal to its share of total output value. Rounding pennies go to the fee."
+        "interpretation_risk": "Proportional: every output receives a fraction of the input taint pool equal to its share of total output value. On Pizza-Day data the residue going to fee_taint is integer-floor rounding because the consolidation tx paid zero fee; on data with non-zero miner fee, fee_taint also includes the proportional share of the inbound taint absorbed by the fee."
       },
       {
         "convention": "poison",
