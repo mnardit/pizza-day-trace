@@ -54,5 +54,5 @@
     "poison": 1177.0
   },
   "topology_diverges_at_horizon": false,
-  "note": "Topology (set of UTXOs visited) is identical across the three conventions for this dataset because the dust-pruning threshold (1 BTC) is below the smallest tainted amount under every convention. At a higher dust threshold, poison would visit additional descendants because of its inflation."
+  "note": "Topology (set of UTXOs visited) is identical across the three conventions for this dataset because the dust-pruning threshold (1 BTC) is below the smallest tainted amount under every convention. Raising the dust-pruning threshold for a fixed convention prunes more, not fewer, branches. The convention-comparison consideration is relative: at a stricter threshold where FIFO and haircut prune a branch, the same branch may remain under poison because poison attributes more taint to each output."
 }
